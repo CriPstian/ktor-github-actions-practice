@@ -1,9 +1,16 @@
 name: learn-github-actions
 on: [push]
 jobs:
+  echo-start:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start of Action"
   kotlin-linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: vroy/gha-kotlin-linter@v3
-
+  echo-end:
+    runs-on: ubuntu-latest
+    steps:
+      - run:  echo "End of Action"
