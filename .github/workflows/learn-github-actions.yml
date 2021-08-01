@@ -10,3 +10,11 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+  kotlin-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+      - name: "klint"
+        uses: vroy/gha-kotlin-linter@v3
+
