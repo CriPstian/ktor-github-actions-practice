@@ -14,3 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run:  echo "End of Action"
+  print-with-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just printing something
+        run: ./github/scripts/print.sh
+        shell: bash
+
