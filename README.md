@@ -3,3 +3,5 @@
 Using this project to study Ktor and Github Actions
 
 Using [Learn Github Actions](https://docs.github.com/en/actions/learn-github-actions)
+
+currently [at](https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs)
