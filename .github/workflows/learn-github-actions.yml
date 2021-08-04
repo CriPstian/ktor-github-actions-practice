@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Just printing something
         run: |
-          .github/scripts/print.sh
+          ./.github/scripts/print.sh
         shell: bash
   example-job-upload:
     runs-on: ubuntu-latest
@@ -44,4 +44,3 @@ jobs:
       - shell: bash
         run: |
           cat output-log-file
-
