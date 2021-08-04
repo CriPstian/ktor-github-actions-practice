@@ -17,8 +17,9 @@ jobs:
   print-with-script:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Just printing something
-        run: tree # .github/scripts/print.sh
+        run: ./.github/scripts/print.sh
         shell: bash
 #  example-job-upload:
 #    runs-on: ubuntu-latest
