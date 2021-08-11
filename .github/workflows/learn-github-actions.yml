@@ -36,6 +36,7 @@ jobs:
         run: ls -R
         working-directory: test-upload
   example-job-download:
+    needs: example-job-upload
     runs-on: ubuntu-latest
     name: Download output
     steps:
