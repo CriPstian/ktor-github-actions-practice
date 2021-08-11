@@ -28,7 +28,7 @@ jobs:
       - run: mkdir -p test-upload
       - run: echo "Test file uploaded with success!" > test-upload/output.test
       - name: Upload output file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.2.4
         with:
           name: output.test
           path: test-upload
@@ -42,7 +42,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
       - name: Download a single artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v2.2.4
         with:
           name: output.test
           path: test-upload
@@ -52,3 +52,11 @@ jobs:
       - name: Display file contents
         run: cat output.test
         working-directory: test-upload
+  handling-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve a secret
+        env:
+          super_secret: ${{ secrets.SUPER_SECRET }}
+        run: |
+          echo "My secret is: $super_secret"
