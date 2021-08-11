@@ -39,10 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Download output
     steps:
-      - uses: actions/checkout@v2
       - name: Display structure of downloaded files
         run: ls -R
-        working-directory: test-upload
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
