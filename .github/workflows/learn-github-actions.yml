@@ -28,7 +28,7 @@ jobs:
       - run: mkdir -p test-upload
       - run: echo "Test file uploaded with success!" > test-upload/output.test
       - name: Upload output file
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v2
         with:
           name: output.test
           path: test-upload
@@ -43,7 +43,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
       - name: Download a single artifact
-        uses: actions/download-artifact@v2.2.4
+        uses: actions/download-artifact@v2
         with:
           name: output.test
           path: test-upload
