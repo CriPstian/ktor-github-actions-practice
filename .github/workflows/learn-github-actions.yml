@@ -44,7 +44,7 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
-          name: my-test-upload
+          name: output.test
           path: test-upload
       - name: Display structure of downloaded files
         run: ls -R
