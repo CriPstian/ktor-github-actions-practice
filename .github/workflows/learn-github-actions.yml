@@ -25,24 +25,29 @@ jobs:
     runs-on: ubuntu-latest
     name: Save output
     steps:
-      - uses: actions/checkout@v2
       - run: mkdir -p test-upload
       - run: echo "Test file uploaded with success!" > test-upload/output.test
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
-          name: my-test-upload
-          path: test-upload/output.test
+          name: output.test
+          path: test-upload
+      - name: Display structure of files
+        run: ls -R
+        working-directory: test-upload
   example-job-download:
     runs-on: ubuntu-latest
     name: Download output
     steps:
       - uses: actions/checkout@v2
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: test-upload
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
           name: my-test-upload
-          path: test-upload/output.test
+          path: test-upload
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: test-upload
