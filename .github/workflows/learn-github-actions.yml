@@ -49,3 +49,6 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: test-upload
+      - name: Display file contents
+        run: cat output.test
+        working-directory: test-upload
