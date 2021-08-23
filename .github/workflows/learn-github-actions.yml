@@ -92,7 +92,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Hello world actions step
         id: hello-composite
-        uses: ./.github/actions/hello-world-composite-run-steps-actions
+        uses: ./.github/actions/hello-world-composite-run-steps-action
         with:
           who-to-greet: 'Composite'
       - name: Get random number
