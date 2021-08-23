@@ -61,3 +61,15 @@ jobs:
           super_secret: ${{ secrets.SUPER_SECRET }}
         run: |
           echo "My secret is: $super_secret"
+  run-my-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        id: hello
+        uses: ./.github/actions/hello-world-docker-action
+        with:
+          who-to-greet: 'CriPstian'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
