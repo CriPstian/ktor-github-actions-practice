@@ -73,3 +73,15 @@ jobs:
           who-to-greet: 'CriPstian'
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+  run-my-javascript-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world actions step
+        id: hello-javascript
+        uses: ./.github/actions/hello-world-javascript-action
+        with:
+          who-to-greet: 'JavaScript'
+      - name: Get my output time
+        run: echp "JavaScript has time ${{ steps.hello-javascript.outputs.time }}"
