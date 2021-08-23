@@ -85,3 +85,16 @@ jobs:
           who-to-greet: 'JavaScript'
       - name: Get my output time
         run: echo "JavaScript has time ${{ steps.hello-javascript.outputs.time }}"
+  run-my-composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world actions step
+        id: hello-composite
+        uses: ./.github/actions/hello-world-composite-run-steps-actions
+        with:
+          who-to-greet: 'Composite'
+      - name: Get random number
+        run: echo random-number ${{ steps.hello-composite.outputs.random-number }}
+        shell: bash
