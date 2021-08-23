@@ -84,4 +84,4 @@ jobs:
         with:
           who-to-greet: 'JavaScript'
       - name: Get my output time
-        run: echp "JavaScript has time ${{ steps.hello-javascript.outputs.time }}"
+        run: echo "JavaScript has time ${{ steps.hello-javascript.outputs.time }}"
