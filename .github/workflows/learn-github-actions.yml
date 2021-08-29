@@ -1,5 +1,8 @@
 name: Learn Github Actions
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   echo-start:
     runs-on: ubuntu-latest

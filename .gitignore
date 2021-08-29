@@ -1,3 +1,5 @@
 .idea
 .gradle
 .github/actions/hello-world-javascript-action/node_modules
+build
+

@@ -5,6 +5,7 @@ val logback_version: String by project
 plugins {
     application
     kotlin("jvm") version "1.5.21"
+    id("org.jlleitschuh.gradle.ktlint").version("10.1.0")
 }
 
 group = "com.cripstian"
