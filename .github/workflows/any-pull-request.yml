@@ -1,0 +1,8 @@
+name: On any pull request
+on: pull_request
+
+jobs:
+  echo-start:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start of Action"
